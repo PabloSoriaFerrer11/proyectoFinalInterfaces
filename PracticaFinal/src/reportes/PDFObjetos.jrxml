@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="07839608-9124-41c5-bc37-a03d8d79b815">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     tablaobjetos.`nombre` AS tablaobjetos_nombre,
+     tablaobjetos.`precio` AS tablaobjetos_precio,
+     tablaobjetos.`descripcion` AS tablaobjetos_descripcion,
+     tablaobjetos.`daño` AS tablaobjetos_daño,
+     tablaobjetos.`armadura` AS tablaobjetos_armadura,
+     tablaobjetos.`tipoobjeto` AS tablaobjetos_tipoobjeto
+FROM
+     `tablaobjetos` tablaobjetos]]>
+	</queryString>
+	<field name="tablaobjetos_nombre" class="java.lang.String"/>
+	<field name="tablaobjetos_precio" class="java.lang.Integer"/>
+	<field name="tablaobjetos_descripcion" class="java.lang.String"/>
+	<field name="tablaobjetos_daño" class="java.lang.Integer"/>
+	<field name="tablaobjetos_armadura" class="java.lang.Integer"/>
+	<field name="tablaobjetos_tipoobjeto" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="79" backcolor="#FF9933" uuid="34b77f2e-7a28-44a6-bd6a-aa1eedb09b25"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="137" y="24" width="303" height="37" uuid="e990750f-7727-4a95-9286-cd911f698321"/>
+				<textElement textAlignment="Center">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[OBJETOS DEL JUEGO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="17" width="555" height="1" uuid="f6e0bae5-0ccd-4c28-a52f-33e1484aa0fb"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="21" width="55" height="20" uuid="9629ca09-f08c-4f4c-860a-b930ec843335"/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="91" y="21" width="71" height="20" uuid="1153e9ab-84d4-43a2-b633-2373db9d400a"/>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="21" width="59" height="20" uuid="64372fd4-4906-4f75-b474-52d3e7d6620a"/>
+				<text><![CDATA[PRECIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="22" width="75" height="20" uuid="424ef985-8423-4cef-a7d3-4cf22a2e9517"/>
+				<text><![CDATA[DAÑO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="21" width="80" height="20" uuid="4042b36b-b29e-48fc-843a-ddb38df8d263"/>
+				<text><![CDATA[ARMADURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="21" width="100" height="20" uuid="ec2085f5-3927-4077-abd3-7f5a41345bd5"/>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="18" width="88" height="20" uuid="abd9e7c3-e10c-4836-bb28-018d84371f6d"/>
+				<textFieldExpression><![CDATA[$F{tablaobjetos_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="91" y="18" width="106" height="20" uuid="ee9a2f18-7036-41fe-ba59-0611ac2c2614"/>
+				<textFieldExpression><![CDATA[$F{tablaobjetos_tipoobjeto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="18" width="59" height="20" uuid="d052cb12-a4ce-4b45-bc5a-a5c3f8c61ce1"/>
+				<textFieldExpression><![CDATA[$F{tablaobjetos_precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="18" width="75" height="20" uuid="59f07950-66ee-4563-a62d-09b064efe4bc"/>
+				<textFieldExpression><![CDATA[$F{tablaobjetos_daño}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="18" width="80" height="20" uuid="18e74ff4-6a9f-464b-8169-cf3533d229a7"/>
+				<textFieldExpression><![CDATA[$F{tablaobjetos_armadura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="50" uuid="56eb5f51-9186-4d71-ad85-e8d3e88a7825"/>
+				<textFieldExpression><![CDATA[$F{tablaobjetos_descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="426" y="34" width="80" height="20" uuid="459782bb-6c7f-4b6a-8f39-7cf389b2ba84"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="34" width="40" height="20" uuid="0e2f31fc-b7e6-491a-9a66-93b72b66c15d"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
